@@ -3,22 +3,27 @@
 <head>
     <script type="text/javascript">
     </script>
-<meta http-equiv="content-type" content="text/html;" charset="utf-8">
-<title>Eagle Eye | Electrical Equipment & Tools | Get electrical equipment and Tools for cheap price from Eagle Eye</title>
+    <meta http-equiv="content-type" content="text/html;" charset="utf-8">
+    <title>Eagle Eye | Electrical Equipment & Tools | Get electrical equipment and Tools for cheap price from Eagle Eye</title>
 
-<meta name="twitter:title" content="Eagle Eye - Middleast largest distributor of electrical goods">
+    <meta name="twitter:title" content="Eagle Eye - Middleast largest distributor of electrical goods">
 
-<?php
-    include 'includes/header.php'; 
-    include 'includes/navbar.php'; 
-?>
+    @include('frontend.layout.header')        
+
+</head>
+
+<body>
+
+<div class="wrapper_box">
+
+    @include('frontend.layout.navbar')
 
     <!-- Bnner Section -->
     <section class="banner-section wow fadeIn">
         <div class="swiper-container banner-slider">
             <div class="swiper-wrapper">
                 <!-- Slide Item -->
-                <div class="swiper-slide" style="background-image: url(images/main-slider/bck.jpg);">
+                <div class="swiper-slide" style="background-image: url({{ url('frontend/images/main-slider/bck.jpg') }});">
                     <div class="content-outer">
                         <div class="content-box">
                             <div class="inner">
@@ -33,7 +38,7 @@
                 </div>
 
                 <!-- Slide Item -->
-                <div class="swiper-slide" style="background-image: url(images/main-slider/bck_2.jpg);">
+                <div class="swiper-slide" style="background-image: url({{ url('frontend/images/main-slider/bck_2.jpg') }});">
                     <div class="content-outer">
                         <div class="content-box">
                             <div class="inner">
@@ -68,9 +73,9 @@
                 <div class="col-xl-6">
                     <div class="about-two-left-content wow slideInLeft" data-wow-delay="100ms">
                         <div class="about-two-sec-image">
-                           <div class="about-two-sec-image-bg-1" style="background-image: url(images/about/about-2--pattern-1.png)"></div>
-                           <div class="about-two-sec-image-bg-2" style="background-image: url(images/about/about-2--pattern-2.png)"></div>
-                            <img src="images/about/about-page-img-1.png" alt="">
+                           <div class="about-two-sec-image-bg-1" style="background-image: url({{ url('frontend/images/about/about-2--pattern-1.png') }})"></div>
+                           <div class="about-two-sec-image-bg-2" style="background-image: url({{ url('frontend/images/about/about-2--pattern-2.png') }})"></div>
+                            <img src="{{ url('frontend/images/about/about-page-img-1.png') }}" alt="">
                         </div>
                     </div>
                 </div>
@@ -117,7 +122,7 @@
     <!-- End About Two Section --> 
     
     <!--Start Funfacts One Section --> 
-    <section class="funfacts-one-section" style="background-image: url(images/background/funfact-1-bg.jpg)">
+    <section class="funfacts-one-section" style="background-image: url({{ url('frontend/images/background/funfact-1-bg.jpg') }})">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6">
@@ -180,12 +185,12 @@
                     <!--Team One Single-->
                     <div class="team-one-single wow fadeInLeft" data-wow-delay="100ms">
                         <div class="team-one-img" >
-                            <img src="images/product/product_1.jpeg" alt="">
+                            <img src="{{ url('frontend/images/product/product_1.jpeg') }}" alt="">
                             <div class="team-one-hover">
                                 <div class="team-one-social">
-                                    <a href="images/product/product_1.jpeg" class="img-popup"><i class="fa fa-eye"></i></a>
+                                    <a href="{{ url('frontend/images/product/product_1.jpeg') }}" class="img-popup"><i class="fa fa-eye"></i></a>
                                     <!-- <a href=""><i class="fa fa-file-pdf"></i></a> -->
-                                    <a href="documents/eagle eye.pdf" download="eagle eye.pdf"><i class="fa fa-file-pdf"></i></a>
+                                    <a href="{{ url('frontend/documents/eagle eye.pdf') }}" download="eagle eye.pdf"><i class="fa fa-file-pdf"></i></a>
 
                                 </div>
                             </div>
@@ -201,10 +206,10 @@
                     <!--Team One Single-->
                     <div class="team-one-single wow fadeInLeft" data-wow-delay="200ms">
                         <div class="team-one-img">
-                            <img src="images/product/product_2.PNG" alt="">
+                            <img src="{{ url('frontend/images/product/product_2.PNG') }}" alt="">
                             <div class="team-one-hover">
                                 <div class="team-one-social">
-                                    <a href="images/product/product_2.PNG" class="img-popup"><i class="fa fa-eye"></i></a>
+                                    <a href="images/product/product_2.PNG') }}" class="img-popup"><i class="fa fa-eye"></i></a>
                                     <a href=""><i class="fa fa-file-pdf"></i></a>
                                     <!-- <a href="path/to/your-pdf-file.pdf" download="your-file-name.pdf"><i class="fa fa-file-pdf"></i></a> -->
                                 </div>
@@ -221,10 +226,10 @@
                     <!--Team One Single-->
                     <div class="team-one-single wow fadeInLeft" data-wow-delay="300ms">
                         <div class="team-one-img">
-                            <img src="images/product/product_3.PNG" alt="">
+                            <img src="{{ url('frontend/images/product/product_3.PNG') }}" alt="">
                             <div class="team-one-hover">
                                 <div class="team-one-social">
-                                    <a href="images/product/product_3.PNG" class="img-popup"><i class="fa fa-eye"></i></a>
+                                    <a href="{{ url('frontend/images/product/product_3.PNG') }}" class="img-popup"><i class="fa fa-eye"></i></a>
                                     <a href=""><i class="fa fa-file-pdf"></i></a>
                                     <!-- <a href="path/to/your-pdf-file.pdf" download="your-file-name.pdf"><i class="fa fa-file-pdf"></i></a> -->
                                 </div>
@@ -241,10 +246,10 @@
                     <!--Team One Single-->
                     <div class="team-one-single wow fadeInLeft" data-wow-delay="400ms">
                         <div class="team-one-img">
-                            <img src="images/product/product_4.PNG" alt="">
+                            <img src="{{ url('frontend/images/product/product_4.PNG') }}" alt="">
                             <div class="team-one-hover">
                                 <div class="team-one-social">
-                                    <a href="images/product/product_4.PNG" class="img-popup"><i class="fa fa-eye"></i></a>
+                                    <a href="{{ url('frontend/images/product/product_4.PNG') }}" class="img-popup"><i class="fa fa-eye"></i></a>
                                     <a href=""><i class="fa fa-file-pdf"></i></a>
                                     <!-- <a href="path/to/your-pdf-file.pdf" download="your-file-name.pdf"><i class="fa fa-file-pdf"></i></a> -->
                                 </div>
@@ -278,7 +283,7 @@
             <div class="row">
                 <div class="col-xl-6">
                     <div class="why-choose-two-image">
-                        <img src="images/resource/his.jpg" alt="">
+                        <img src="{{ url('frontend/images/resource/his.jpg') }}" alt="">
                     </div>
                 </div>
                 <div class="col-xl-6">
@@ -313,7 +318,17 @@
    
     
         
-<?php
-    include 'includes/brand.php';
-    include 'includes/footer.php'; 
-?>
+    <hr>
+
+
+
+    @include('frontend.layout.brand')
+    @include('frontend.layout.footer')
+    
+
+
+
+
+
+</body>
+</html>
