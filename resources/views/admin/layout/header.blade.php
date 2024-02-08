@@ -6,10 +6,16 @@
     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
-    <a href="index3.html" class="nav-link">Home</a>
+    <a href="{{ route('admin.home')}}" class="nav-link">Home</a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
-    <a href="#" class="nav-link">Contact</a>
+    <a href="{{ route('admin.about')}}" class="nav-link">About</a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block">
+    <a href="{{ route('admin.products')}}" class="nav-link">Product</a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block">
+    <a href="{{ route('admin.contact')}}" class="nav-link">Contact</a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
     <a href="{{ url('admin/logout') }}" class="nav-link">Logout</a>

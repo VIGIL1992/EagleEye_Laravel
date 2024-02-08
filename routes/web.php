@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\ProductController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
@@ -97,6 +99,18 @@ Route::get('/product', function () {
     return view('frontend/product');
 })->name('product');
 
-Route::get('/dashboard', function () {
-    return view('admin/dashboard');
-})->name('dashboard');
+// Route::get('admin/dashboard', function () {
+//     return view('admin/dashboard');
+// })->name('dashboard');
+
+
+
+
+Route::prefix('/admin')->group(function () {
+    Route::get('home', [AdminController::class, 'home'])->name('admin.home');
+    Route::get('about', [AdminController::class, 'about'])->name('admin.about');
+    Route::get('products', [AdminController::class, 'product'])->name('admin.products');
+    Route::get('contact', [AdminController::class, 'contact'])->name('admin.contact');
+});
+
+Route::resource('/product', ProductController::class);

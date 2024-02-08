@@ -21,7 +21,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        // return view('product.create'); 
     }
 
     /**
@@ -29,7 +29,10 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
-        //
+        // $product = Product::create([
+        //     'name' => $request->name,
+        //     'description' => $request->description,
+        // ]);
     }
 
     /**
@@ -61,6 +64,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        // $product->delete();
+        // return redirect(route('admin.dashboard'));
     }
 }

@@ -51,7 +51,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12 text-center ">
-                                        <a href="documents/eagle eye.pdf" class="theme-btn blog-one-button" download="eagle eye.pdf"><i class="far fa-file-pdf"></i> Read More</a>
+                                        <a href="{{ url('frontend/documents/eagle eye.pdf') }}" class="theme-btn blog-one-button" download="eagle eye.pdf"><i class="far fa-file-pdf"></i> Read More</a>
                                     </div>
                                 </div>
     
