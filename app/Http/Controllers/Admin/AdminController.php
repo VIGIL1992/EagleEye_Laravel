@@ -16,7 +16,7 @@ class AdminController extends Controller
         return view('admin.about');
     }
     public function product(Request $request){
-        $products = Product::first();
+        $products = Product::all();
         return view('admin.products', compact('products'));
         // return view('admin.product');
     }

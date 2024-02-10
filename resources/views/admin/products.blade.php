@@ -36,25 +36,15 @@
        
         <div class="card-body">
           <div class="form-group row">
-            <label for="heading" class="col-sm-2 col-form-label">Product Name</label>
+            <label for="product_name" class="col-sm-2 col-form-label">Product Name</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="product_name" placeholder="Product Name" value="">
+              <input type="text" class="form-control" id="product_name" name="product_name" placeholder="Product Name" value="">
             </div>
           </div>
           <div class="form-group row">
-            <label for="content" class="col-sm-2 col-form-label">Discribtion</label>
+            <label for="description" class="col-sm-2 col-form-label">Discription</label>
             <div class="col-sm-10">
-              <textarea class="form-control" rows="3" id="discribtion" placeholder="Enter Your Discribtion"></textarea>
-            </div>
-          </div>
-
-          <div class="form-group row">
-            <label for="currentImage" class="col-sm-2 col-form-label">Current Image</label>
-            <div class="col-sm-10">
-                <div class="custom-file">
-                   
-                    <img src="" alt="" srcset="">
-                </div>
+              <textarea class="form-control" rows="3" id="description" name="description" placeholder="Enter Your Description"></textarea>
             </div>
           </div>
 
@@ -62,18 +52,20 @@
             <label for="newImage" class="col-sm-2 col-form-label">Change Image</label>
             <div class="col-sm-10">
                 <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="exampleInputFile">
-                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                    <input type="file" class="custom-file-input" id="Image" name="Image">
+                    <label class="custom-file-label" for="Image">Choose file</label>
                 </div>
             </div>
           </div>
+
+          
 
           <div class="form-group row">
             <label for="document" class="col-sm-2 col-form-label">Documennt</label>
             <div class="col-sm-10">
                 <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="exampleInputFile">
-                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                    <input type="file" class="custom-file-input" id="document" name="document">
+                    <label class="custom-file-label" for="document">Choose file</label>
                 </div>
             </div>
           </div>
@@ -104,13 +96,13 @@
             <div class="form-group row">
               <label for="heading" class="col-sm-2 col-form-label">Product Name</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="product_name" placeholder="Product Name" value="{{ $products -> name }}">
+                <input type="text" class="form-control" id="product_name" placeholder="Product Name" value="">
               </div>
             </div>
             <div class="form-group row">
               <label for="content" class="col-sm-2 col-form-label">Discribtion</label>
               <div class="col-sm-10">
-                <textarea class="form-control" rows="3" id="discribtion" placeholder="Enter Your Discribtion">{{ $products -> description }}</textarea>
+                <textarea class="form-control" rows="3" id="discribtion" placeholder="Enter Your Discribtion"></textarea>
               </div>
             </div>
 
@@ -163,59 +155,33 @@
             <div class="card-header">
               <h3 class="card-title">Responsive Hover Table</h3>
 
-              <div class="card-tools">
-                <div class="input-group input-group-sm" style="width: 150px;">
-                  <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-                  <div class="input-group-append">
-                    <button type="submit" class="btn btn-default">
-                      <i class="fas fa-search"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
             </div>
             <!-- /.card-header -->
             <div class="card-body table-responsive p-0">
               <table class="table table-hover text-nowrap">
                 <thead>
                   <tr>
-                    <th>ID</th>
-                    <th>User</th>
-                    <th>Date</th>
-                    <th>Status</th>
-                    <th>Reason</th>
+                    <th>No.</th>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Document</th>
+                    <th style="max-width: 400px;">Description</th>
+                    <th>Edit/Delete</th>
                   </tr>
                 </thead>
                 <tbody>
+                  
+                  @foreach($products as $product)
                   <tr>
-                    <td>183</td>
-                    <td>John Doe</td>
-                    <td>11-7-2014</td>
-                    <td><span class="tag tag-success">Approved</span></td>
-                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    <td>{{ $loop->iteration }}</td>
+                    <td><img  width="100" height="100" src="{{ asset("storage/$product->image") }}" alt="{{ $product->name }}"></td>
+                    <td>{{ $product -> name }}</td>
+                    <td><a href="{{ asset("storage/$product->document") }}" class="theme-btn blog-one-button" download="eagle eye.pdf"><i class="far fa-file-pdf"></i> Read More</a></td>
+                    <td class="d-flex" style="max-width: 400px;">{{ $product -> description }}</td>
+                    <td colspan="2">Edit / Delete</td>
                   </tr>
-                  <tr>
-                    <td>219</td>
-                    <td>Alexander Pierce</td>
-                    <td>11-7-2014</td>
-                    <td><span class="tag tag-warning">Pending</span></td>
-                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                  </tr>
-                  <tr>
-                    <td>657</td>
-                    <td>Bob Doe</td>
-                    <td>11-7-2014</td>
-                    <td><span class="tag tag-primary">Approved</span></td>
-                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                  </tr>
-                  <tr>
-                    <td>175</td>
-                    <td>Mike Doe</td>
-                    <td>11-7-2014</td>
-                    <td><span class="tag tag-danger">Denied</span></td>
-                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                  </tr>
+                  @endforeach
+                 
                 </tbody>
               </table>
             </div>

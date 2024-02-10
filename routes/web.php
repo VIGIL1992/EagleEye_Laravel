@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\ProductController;
 use App\Models\User;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 
@@ -95,9 +96,10 @@ Route::get('/contact', function () {
     return view('frontend/contact');
 })->name('contact');
 
-Route::get('/product', function () {
-    return view('frontend/product');
-})->name('product');
+Route::get('/products', function () {
+    $products = Product::all();
+    return view('frontend/product', compact('products'));
+})->name('products');
 
 // Route::get('admin/dashboard', function () {
 //     return view('admin/dashboard');

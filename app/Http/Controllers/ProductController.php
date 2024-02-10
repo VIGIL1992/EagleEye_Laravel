@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -29,10 +31,33 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
-        // $product = Product::create([
-        //     'name' => $request->name,
-        //     'description' => $request->description,
-        // ]);
+        // dd($request->all());
+        $ext = $request->file('Image')->extension();
+        $document_ext = $request->file('document')->extension();
+
+        // $filename = Str::random(25);
+        $filename = $request->product_name;
+        $image_contents = file_get_contents($request->file('Image'));
+        $image_path = "products/$filename.$ext";
+
+        $document_contents = file_get_contents($request->file('document'));
+        $document_path = "document/$filename.$document_ext";
+
+        Storage::disk('public')->put($image_path, $image_contents);
+        Storage::disk('public')->put($document_path, $document_contents);
+
+        $product = Product::create([
+            'name' => $request->product_name,
+            'description' => $request->description,
+            'image' => $image_path,
+            'document' => $document_path,
+
+            
+        ]);
+
+        
+        // return response($product);
+        return redirect(route('admin.products'))->with('message','Product added');
     }
 
     /**

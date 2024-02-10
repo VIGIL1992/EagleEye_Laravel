@@ -35,6 +35,34 @@
         <section class="blog-one-section blog-page">
             <div class="container">
                 <div class="row">
+
+                    @foreach($products as $product)
+                    <div class="col-xl-4 col-lg-4">
+                        <!--Blog One Single-->
+                        <div class="blog-one-single wow fadeInUp" data-wow-delay="100ms">
+                            <div class="blog-one-img">
+                                <!-- <img src="{{ "storage/$product -> Image" }}" alt="{{ $product->name }}"> -->
+                                <img src="{{ asset("storage/$product->image") }}" alt="{{ $product->name }}">
+
+                            </div>
+                            <div class="blog-one-content">
+                                <div class="blog-one-title">
+                                    <h3><a href="#">{{ $product -> name }}</a></h3>
+                                </div>
+                                <div class="blog-one-text">
+                                    <p>{{ $product -> description }}</p><br>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 text-center ">
+                                        <a href="{{ asset("storage/$product->document") }}" class="theme-btn blog-one-button" download="eagle eye.pdf"><i class="far fa-file-pdf"></i> Read More</a>
+                                    </div>
+                                </div>
+    
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+
                     <div class="col-xl-4 col-lg-4">
                         <!--Blog One Single-->
                         <div class="blog-one-single wow fadeInUp" data-wow-delay="100ms">
