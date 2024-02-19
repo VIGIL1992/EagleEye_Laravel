@@ -13,6 +13,22 @@ return new class extends Migration
     {
         Schema::create('home_pages', function (Blueprint $table) {
             $table->id();
+
+            $table->string('slider_1_image');
+            $table->string('slider_1_header');
+            $table->string('slider_1_subheader');
+            $table->string('slider_1_button_name');
+
+            $table->string('slider_2_image');
+            $table->string('slider_2_header');
+            $table->string('slider_2_subheader');
+            $table->string('slider_2_button_name');
+
+            $table->string('about_image');
+            $table->string('about_header');
+            $table->string('about_subheader');
+            $table->text('about_description');
+
             $table->timestamps();
         });
     }

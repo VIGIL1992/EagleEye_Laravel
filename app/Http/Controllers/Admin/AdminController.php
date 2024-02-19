@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\ContactPageController;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\contact_page;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -22,7 +24,8 @@ class AdminController extends Controller
     }
 
     public function contact(Request $request){
-        return view('admin.contact');
+        $contact = contact_page::first();
+        return view('admin.contact', compact('contact'));
     }
 
 }

@@ -13,6 +13,17 @@ return new class extends Migration
     {
         Schema::create('about_pages', function (Blueprint $table) {
             $table->id();
+
+            $table->string('about_page_header');
+            $table->string('about_image');
+            $table->string('about_heading');
+            $table->text('about_description');
+            
+            $table->string('history_image');
+            $table->string('history_heading');
+            $table->text('history_description');
+            $table->string('history_year');
+            
             $table->timestamps();
         });
     }

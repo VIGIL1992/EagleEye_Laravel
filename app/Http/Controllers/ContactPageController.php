@@ -13,7 +13,11 @@ class ContactPageController extends Controller
      */
     public function index()
     {
-        //
+        
+        $contact = contact_page::first();
+        // dd( $contact);
+        return view('admin/contact', compact('contact'));
+    
     }
 
     /**
@@ -53,7 +57,7 @@ class ContactPageController extends Controller
      */
     public function update(Updatecontact_pageRequest $request, contact_page $contact_page)
     {
-        //
+        dd($request);
     }
 
     /**

@@ -51,7 +51,6 @@ class ProductController extends Controller
             'description' => $request->description,
             'image' => $image_path,
             'document' => $document_path,
-
             
         ]);
 
@@ -73,7 +72,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        // dd($product);
+        return view('admin.edit_product', compact('product'));
     }
 
     /**
@@ -81,7 +81,7 @@ class ProductController extends Controller
      */
     public function update(UpdateProductRequest $request, Product $product)
     {
-        //
+        
     }
 
     /**
@@ -89,7 +89,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        // $product->delete();
-        // return redirect(route('admin.dashboard'));
+        $product->delete();
+        return redirect(route('admin.products'));
     }
 }

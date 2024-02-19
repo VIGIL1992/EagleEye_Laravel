@@ -31,35 +31,48 @@
         <!-- /.card-header -->
         <!-- form start -->
  
-        <form class="form-horizontal" name="updateContent" id="updateContent" enctype="multipart/form-data" method="post" action="{{ url('admin/updateContent') }}">@csrf
-          <!-- @method('put') Add this line for the PUT request -->
+        <form class="form-horizontal" enctype="multipart/form-data"  action="{{ route('contact.update', ['contact' => $contact->id]) }}">
+          @csrf
+          @method('patch') 
           <div class="card-body">
             <div class="form-group row">
-              <label for="heading" class="col-sm-2 col-form-label">Email</label>
+              <label for="heading" class="col-sm-2 col-form-label">Email 1</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="product_name" placeholder="Email" value="">
-              </div>
-            </div>
-            
-            <div class="form-group row">
-              <label for="currentImage" class="col-sm-2 col-form-label">Current Image</label>
-              <div class="col-sm-10">
-                  <div class="custom-file">
-                     
-                      <img src="" alt="" srcset="">
-                  </div>
+                <input type="text" class="form-control" id="email_1" placeholder="Email 1" value="{{ $contact->email_1 }}">
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="newImage" class="col-sm-2 col-form-label">Change Image</label>
+              <label for="heading" class="col-sm-2 col-form-label">Email 2</label>
               <div class="col-sm-10">
-                  <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="exampleInputFile">
-                      <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                  </div>
+                <input type="text" class="form-control" id="email_2" placeholder="Email 2" value="{{ $contact->email_2 }}">
               </div>
             </div>
+
+            <div class="form-group row">
+              <label for="heading" class="col-sm-2 col-form-label">phone_1</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="phone_1" placeholder="phone_1" value="{{ $contact->phone_1 }}">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="heading" class="col-sm-2 col-form-label">phone_2</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="phone_2" placeholder="phone_2" value="{{ $contact->phone_2 }}">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="heading" class="col-sm-2 col-form-label">address</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="address" placeholder="address" value="{{ $contact->address }}">
+              </div>
+            </div>
+            
+            
+
+          
 
             
             

@@ -3,8 +3,12 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ContactPageController;
+
+use App\Models\contact_page;
 use App\Models\User;
 use App\Models\Product;
+
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 
@@ -92,8 +96,10 @@ Route::get('/about', function () {
     return view('frontend/about');
 })->name('about');
 
+// Route::get('/contact', [ContactPageController::class, 'home'])->name('admin.home');
 Route::get('/contact', function () {
-    return view('frontend/contact');
+    $contact = contact_page::first();
+    return view('frontend/contact', compact('contact'));
 })->name('contact');
 
 Route::get('/products', function () {
@@ -112,7 +118,19 @@ Route::prefix('/admin')->group(function () {
     Route::get('home', [AdminController::class, 'home'])->name('admin.home');
     Route::get('about', [AdminController::class, 'about'])->name('admin.about');
     Route::get('products', [AdminController::class, 'product'])->name('admin.products');
-    Route::get('contact', [AdminController::class, 'contact'])->name('admin.contact');
+    Route::get('contact', [ContactPageController::class, 'index'])->name('admin.contact');
+
+    Route::patch('contact.update', [ContactPageController::class, 'update'])->name('contact.update');
+    // Route::patch('contact.update', function () {
+    //     dd('hai');
+        
+    //     return view('frontend/contact', compact('contact'));
+    // })->name('contact.update');
+
+    Route::resource('/product', ProductController::class);
+
 });
 
-Route::resource('/product', ProductController::class);
+
+
+
