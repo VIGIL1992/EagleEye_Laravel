@@ -57,7 +57,7 @@
                                     <div class="nav-inner">
                                         <!-- Main Menu -->
                                         <nav class="main-menu navbar-expand-xl navbar-dark">
-
+                                            
                                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                                 <ul class="navigation">
                                                     <li class=""><a href="{{ route('home') }}">Home</a>

@@ -18,12 +18,6 @@
         @method('patch')
 
         <div>
-            <x-input-label for="image" value="Image " />
-            <x-text-input id="image" name="image" type="file" class="mt-1 block w-full" :value="old('image', $user->image)" required autofocus autocomplete="image" />
-            <x-input-error class="mt-2" :messages="$errors->get('image')" />
-        </div>
-
-        <div>
             <x-input-label for="name" :value="__('Name')" />
             <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
             <x-input-error class="mt-2" :messages="$errors->get('name')" />

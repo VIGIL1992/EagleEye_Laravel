@@ -33,7 +33,7 @@
 
                 <form class="form-horizontal" name="addProduct" id="addProduct" enctype="multipart/form-data" method="POST" action="{{ route('product.store') }}">
                     @csrf
-
+                    @method('put')
                     <div class="card-body">
                         <div class="form-group row">
                             <label for="product_name" class="col-sm-2 col-form-label">Product Name</label>
